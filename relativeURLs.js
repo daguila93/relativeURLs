@@ -2,8 +2,8 @@ var tags = ['a', 'img', 'source', 'video', 'link', 'script'];
 tags.forEach(tag => document.querySelectorAll(tag).forEach(atributte => turnURLRelative(atributte)));
 
 function turnURLRelative(node) {
-    var url = window.location.protocol + "//" + window.location.hostname;
-    var urlReplaced = url.replace('https://', 'http://');
+    let url = window.location.protocol + "//" + window.location.hostname;
+    let urlReplaced = url.replace('https://', 'http://');
 
     if (node.hasAttribute("href") && node.href.includes(url)) {
         node.href = node.href.replaceAll(url, '');
