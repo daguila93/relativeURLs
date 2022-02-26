@@ -1,4 +1,4 @@
-var tags = ['a', 'img', 'source', 'video', 'link', 'script'];
+const tags = ['a', 'img', 'source', 'video', 'link', 'script'];
 tags.forEach(tag => document.querySelectorAll(tag).forEach(atributte => turnURLRelative(atributte)));
 
 function turnURLRelative(node) {
