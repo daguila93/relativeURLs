@@ -14,6 +14,6 @@ function turnURLRelative(node) {
     }
 
     if (node.hasAttribute("srcset")) {
-        node.srcset = node.srcset.replaceAll(urlReplaced, '')
+        node.srcset = node.srcset.replaceAll(urlReplaced, '');
     }
 }
