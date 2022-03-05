@@ -1,19 +1,15 @@
 const tags = ['a', 'img', 'source', 'video', 'link', 'script'];
+const attributes = ['href', 'src', 'srcset'];
+
 tags.forEach(tag => document.querySelectorAll(tag).forEach(atributte => turnURLRelative(atributte)));
 
 function turnURLRelative(node) {
-    let url = window.location.protocol + "//" + window.location.hostname;
-    let urlReplaced = url.replace('https://', 'http://');
+  const regex = new RegExp('^https?://' + window.location.hostname)
 
-    if (node.hasAttribute("href") && node.href.includes(url)) {
-        node.href = node.href.replaceAll(url, '');
+  attributes.forEach(attr => {
+    if (node.hasAttribute(attr) && node[attr].match(regex)) {
+      let url = new URL(node[attr]);
+      node[attr] = node[attr].replaceAll(url.origin, '');
     }
-
-    if (node.hasAttribute("src")) {
-        node.src = node.src.replaceAll(urlReplaced, '');
-    }
-
-    if (node.hasAttribute("srcset")) {
-        node.srcset = node.srcset.replaceAll(urlReplaced, '');
-    }
+  })
 }
