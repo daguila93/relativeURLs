@@ -17,7 +17,7 @@ function turnURLRelative(node) {
 const site = window.location.host;
 const siteRegex = /\./gm;
 const substSite = '\\.';
-const resultSite = str.replace(regex, subst);
+const resultSite = site.replace(regex, subst);
 
 const regex = /http:\\\/\\\/${resultSite}/gm;
 const subst = '';
