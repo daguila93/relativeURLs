@@ -15,11 +15,11 @@ function turnURLRelative(node) {
 }
 
 const site = window.location.host;
-const siteRegex = /\./gm;
-const substSite = '\\.';
-const resultSite = site.replace(siteRegex, substSite);
+// const siteRegex = /\./gm;
+// const substSite = '\\.';
+// const resultSite = site.replace(siteRegex, substSite);
 
-const regex = `/https?:\\\/\\\/${resultSite}/gm`;
+const regex = `/https?:\\\/\\\/${site}/gm`;
 const subst = '';
 
 let classNames = ['et_pb_image_wrap', 'et_pb_image_wrap et_pb_only_image_mode_wrap'];
