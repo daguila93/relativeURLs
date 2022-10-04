@@ -14,7 +14,12 @@ function turnURLRelative(node) {
   })
 }
 
-const regex = /http:\\\/\\\/caferh\.uff\.br/gm;
+const site = window.location.host;
+const siteRegex = /\./gm;
+const substSite = '\\.';
+const resultSite = str.replace(regex, subst);
+
+const regex = /http:\\\/\\\/${resultSite}/gm;
 const subst = '';
 
 let classNames = ['et_pb_image_wrap', 'et_pb_image_wrap et_pb_only_image_mode_wrap'];
