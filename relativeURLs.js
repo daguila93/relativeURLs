@@ -14,7 +14,7 @@ function turnURLRelative(node) {
     })
 }
 
-const regex = /http:\\\/\\\/caferh\.uff\.br/gm;
+const regex = /https?:\\\/\\\/caferh\.uff\.br/gm;
 const subst = '';
 
 let classNames = ['et_pb_image_wrap'];
@@ -26,8 +26,14 @@ classNames.forEach(
         )
 )
 
-const regex1 = /data-et-multi-view.{0,}">/m;
-const subst1 = `>`;
-let element = document.getElementsByClassName('et_pb_image_wrap et_pb_only_image_mode_wrap')
+const regex2 = /https?:\\\/\\\/turismo\.uff\.br/gm;
+const subst2 = '';
 
-Array.from(element).forEach(node => node.innerHTML = node.innerHTML.replace(regex1, subst1))
+let classNames2 = ['et_pb_image_wrap et_pb_only_image_mode_wrap'];
+
+classNames2.forEach(
+    no => Array.from(document.getElementsByClassName(no))
+        .forEach(
+            node => node.innerHTML = node.innerHTML.replace(regex2, subst2)
+        )
+)
