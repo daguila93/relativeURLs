@@ -1,4 +1,4 @@
-const tags = ['a', 'img', 'source', 'video', 'link', ''];
+const tags = ['a', 'img', 'source', 'video', 'link', 'script'];
 const attributes = ['href', 'src', 'srcset'];
 
 tags.forEach(tag => document.querySelectorAll(tag).forEach(atributte => turnURLRelative(atributte)));
