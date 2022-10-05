@@ -17,7 +17,7 @@ function turnURLRelative(node) {
 const regex = /http:\\\/\\\/caferh\.uff\.br/gm;
 const subst = '';
 
-let classNames = ['et_pb_image_wrap', 'et_pb_image_wrap et_pb_only_image_mode_wrap'];
+let classNames = ['et_pb_image_wrap'];
 
 classNames.forEach(
     no => Array.from(document.getElementsByClassName(no))
