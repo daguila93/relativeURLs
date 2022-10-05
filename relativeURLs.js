@@ -25,3 +25,9 @@ classNames.forEach(
             node => node.innerHTML = node.innerHTML.replace(regex, subst)
         )
 )
+
+const regex1 = /data-et-multi-view.{0,}">/m;
+const subst1 = `>`;
+let element = document.getElementsByClassName('et_pb_image_wrap et_pb_only_image_mode_wrap')
+
+element.forEach(node => node.innerHTML = node.innerHTML.replace(regex1, subst1))
