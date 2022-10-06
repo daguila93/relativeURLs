@@ -20,7 +20,9 @@ const regexURL = new RegExp('\\.', 'gm');
 const substURL = `\\.`;
 const result = url.replace(regexURL, substURL);
 
-const regex = new RegExp('https?:\\\/\\\/' + result, 'igm');
+console.log(result);
+
+const regex = new RegExp('https?:\\\/\\\/' + result, 'gm');
 const subst = '';
 
 let classNames = ['et_pb_image_wrap', 'et_pb_image_wrap et_pb_only_image_mode_wrap'];
@@ -28,6 +30,6 @@ let classNames = ['et_pb_image_wrap', 'et_pb_image_wrap et_pb_only_image_mode_wr
 classNames.forEach(
     no => Array.from(document.getElementsByClassName(no))
         .forEach(
-            node => node.innerHTML = node.innerHTML.replace(regex, subst)
+            node => node.innerHTML = node.innerHTML.replaceAll(regex, subst)
         )
 )
