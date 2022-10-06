@@ -43,20 +43,3 @@ classNames.forEach(
             node => node.innerHTML = node.innerHTML.replace(regex, subst)
         )
 )
-
-
-
-
-
-
-const regex2 = /https?:\\\/\\\/turismo\.uff\.br/gm;
-const subst2 = '';
-
-let classNames2 = ['et_pb_image_wrap et_pb_only_image_mode_wrap'];
-
-classNames2.forEach(
-    no => Array.from(document.getElementsByClassName(no))
-        .forEach(
-            node => node.innerHTML = node.innerHTML.replace(regex2, subst2)
-        )
-)
