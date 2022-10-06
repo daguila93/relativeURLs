@@ -14,6 +14,8 @@ function turnURLRelative(node) {
     })
 }
 
+
+
 const url = window.location.hostname;
 
 const regexURL = /\./gm;
@@ -24,9 +26,7 @@ const regexURL = /\./gm;
 const substURL = `\\.`;
 
 // The substituted value will be contained in the result variable
-const result = url.replace(regex, subst);
-
-console.log('Substitution result: ', result);
+const result = url.replace(regexURL, substURL);
 
 // const re = new RegExp("\\b" + test + "\\b");
 
@@ -43,6 +43,7 @@ classNames.forEach(
             node => node.innerHTML = node.innerHTML.replace(regex, subst)
         )
 )
+
 
 
 
