@@ -14,26 +14,32 @@ function turnURLRelative(node) {
     })
 }
 
-const regex = /https?:\\\/\\\/caferh\.uff\.br/gm;
+const url = window.location.hostname;
+
+const regexURL = new RegExp("\\.", "gm");
+
+// Alternative syntax using RegExp constructor
+// const regex = new RegExp('\\.', 'gm')
+
+const substURL = `\\.`;
+
+// The substituted value will be contained in the result variable
+const result = url.replace(regexURL, substURL);
+
+console.log('Substitution result: ', result);
+
+// const re = new RegExp("\\b" + test + "\\b");
+
+
+
+const regex = new RegExp("https?:\\\/\\\/" + result, "igm");
 const subst = '';
 
-let classNames = ['et_pb_image_wrap'];
+let classNames = ['et_pb_image_wrap', 'et_pb_image_wrap et_pb_only_image_mode_wrap'];
 
 classNames.forEach(
     no => Array.from(document.getElementsByClassName(no))
         .forEach(
             node => node.innerHTML = node.innerHTML.replace(regex, subst)
-        )
-)
-
-const regex2 = /https?:\\\/\\\/turismo\.uff\.br/gm;
-const subst2 = '';
-
-let classNames2 = ['et_pb_image_wrap et_pb_only_image_mode_wrap'];
-
-classNames2.forEach(
-    no => Array.from(document.getElementsByClassName(no))
-        .forEach(
-            node => node.innerHTML = node.innerHTML.replace(regex2, subst2)
         )
 )
