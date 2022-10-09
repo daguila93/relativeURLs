@@ -16,7 +16,7 @@ function turnURLRelative(node) {
 
 let classNames = ['et_pb_image_wrap', 'et_pb_image_wrap et_pb_only_image_mode_wrap']; //Só adicionar a classe aqui.
 
-const regex = /https?:\/\/\w+\.uff\.br/g;
+const regex = /https?:\\\/\\\/\w+\.uff\.br/g;
 const subst = '';
 
 classNames.forEach(
