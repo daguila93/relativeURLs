@@ -20,7 +20,7 @@ const site = window.location.host;
 const siteRegex = `/\./gm`;
 const substSite = '\.';
 const resultSite = site.replace(siteRegex, substSite);
-const regex = `/https?:\\\/\\\/${resultSite}/gm`;
+const regex = new RegExp('/https?:\\\/\\\/' + resultSite, 'gm');
 const subst = '';
 
 classNames.forEach(
