@@ -14,14 +14,11 @@ function turnURLRelative(node) {
   })
 }
 
-let classNames = ['image']; //Só adicionar a classe aqui.
-
 const regex = /https?:\\\/\\\/\w+\.uff\.br/g;
 const subst = '';
 
-
 Array.from(document.querySelectorAll('*')).forEach(element => {
   if (element.hasAttribute('data-et-multi-view')) {
-    element.attributes['data-et-multi-view'].textContent = element.attributes['data-et-multi-view'].textContent.replaceAll(regex, subst)
+    element.parentElement.innerHTML = element.parentElement.innerHTML.replace(regex, subst)
   }
 })
