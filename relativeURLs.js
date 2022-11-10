@@ -14,14 +14,14 @@ function turnURLRelative(node) {
   })
 }
 
-let classNames = ['image']; //Só adicionar a classe aqui.
+let classNames = ['et_pb_image_wrap', 'et_pb_image_wrap et_pb_only_image_mode_wrap', 'wp-image-3944', 'wp-image-5459']; //Só adicionar a classe aqui.
 
 const regex = /https?:\\\/\\\/\w+\.uff\.br/g;
 const subst = '';
 
-
-Array.from(document.querySelectorAll('*')).forEach(element => {
-  if (element.hasAttribute('data-et-multi-view')) {
-    element.attributes['data-et-multi-view'].textContent = element.attributes['data-et-multi-view'].textContent.replaceAll(regex, subst)
-  }
-})
+classNames.forEach(
+    no => Array.from(document.getElementsByClassName(no))
+        .forEach(
+            node => node.innerHTML = node.innerHTML.replace(regex, subst)
+        )
+)
